@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block titulo %} Tecnicos Residentes {% endblock %}
+
+{% block contenido %}
+
+<div class="card">
+    <div class="card-header">
+        Editar Informacion de Contrato
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Modificar datos de Contrato</h4>
+        {% include 'contratos/formcontrato.html' %}
+    </div>
+</div>
+
+{% endblock %}

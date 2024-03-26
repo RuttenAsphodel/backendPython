@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block titulo %} Spares {% endblock %}
+
+{% block contenido %}
+
+<div class="card">
+    <div class="card-header">
+        Actualizar Informacion Spare
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Control de Spares</h4>
+        {% include 'spares/formspare.html' %}
+    </div>
+</div>
+
+{% endblock %}

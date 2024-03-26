@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block titulo %} Stock Spares Residencias {% endblock %}
+
+{% block contenido %}
+
+<div class="card">
+    <div class="card-header">
+        <a name="" id="" class="btn btn-success" href="{% url 'crearspare' %}" role="button">Agregar Spare</a>
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Stock Spares Residencia</h4>
+        <form method="GET">
+            <label for="observaciones">Filtrar por Observaciones:</label>
+            <select name="observaciones" id="observaciones" name="observaciones">Estado de Ticket
+                <option value="">Todos</option>
+                <option value="Backup Pendiente">Backup Pendiente</option>
+                <option value="TK Solucionado">TK Solucionado</option>
+            </select>
+            <input type="submit" value="Filtrar">
+
+
+        </form>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Folio Ticket</th>
+                        <th>Estado</th>
+                        <th>Tipo</th>
+                        <th>Serie</th>
+                        <th>Modelo</th>
+                        <th>Fecha Retiro</th>
+                        <th>Transporte</th>
+                        <th>Observaciones</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for equiposSpare in dataspare %}
+                    <tr>
+                        <td> {{ equiposSpare.folioTicket }} </td>
+                        <td> {{ equiposSpare.estado }}</td>
+                        <td> {{ equiposSpare.tipo }} </td>
+                        <td> {{ equiposSpare.serie }} </td>
+                        <td> {{ equiposSpare.modelo }} </td>
+                        <td> {{ equiposSpare.fechaRetiro }} </td>
+                        <td> {{ equiposSpare.transporte }} </td>
+                        <td> {{ equiposSpare.observaciones }} </td>
+
+                        <td>                            
+
+                            <a name="" id="" class="btn btn-primary" href="{% url 'editarspare' equiposSpare.folioTicket %}" role="button">Editar</a> 
+                            <a name="" id="" class="btn btn-danger" href="{% url 'borrarspare' equiposSpare.folioTicket %}" role="button">Eliminar</a>
+                        <td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+    </div>
+</div>
+
+
+
+{% endblock %}

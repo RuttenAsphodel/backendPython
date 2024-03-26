@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block titulo %} Contratos de Equipos {% endblock %}
+
+{% block contenido %}
+
+<div class="card">
+    <div class="card-header">
+        Agregar Equipo
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Datos del Equipo</h4>
+        {% include 'contratos/formcontrato.html' %}
+    </div>
+</div>
+
+{% endblock %}

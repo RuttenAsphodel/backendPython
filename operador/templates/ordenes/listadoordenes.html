@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block titulo %} Listado de Ordenes de Trabajo {% endblock %}
+
+{% block contenido %}
+
+
+<div class="card">
+    <div class="card-header">
+        <a name="" id="" class="btn btn-success" href="{% url 'nuevaorden' %}" role="button">Crear Nuevo Informatico</a>
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Contactos Informaticos de Tribunales</h4>
+        <!-- <form method="GET">
+            <label for="series">Filtrar por Folio:</label>
+            <input type="text" id="series" name="series">
+            <input type="submit" value="Filtrar">
+        </form> -->
+        
+
+        <table class="table table-hover">
+            <tr>
+              
+              <th>Folio</th>
+              <th>Fecha de Solicitud</th>
+              <th>Hora</th>
+              <th>Modelo Equipo</th>
+              <th>Serie Reportada</th>
+              <th>Ubicacion</th>
+              <th>Especialista</th>
+              <th>Fecha Solucion</th>
+              <th>Hora</th>
+              <th>OT</th>  
+              
+            </tr>
+            {% for orden in dataordenes %}
+            <tr>
+              
+              <td>{{ orden.folioTicket }}</td>
+              <td>{{ orden.fechaSolicitud }}</td>
+              <td>{{ orden.horaSolicitud }}</td>
+              <td>{{ orden.id_equipoReportado }}</td>
+              <td>{{ orden.serieReportada }}</td>
+              <td>{{ orden.id_ubicacion }}</td>
+              <td>{{ orden.id_especialista }}</td>
+              <td>{{ orden.fechaTermino }}</td>
+              <td>{{ orden.horaTermino }}</td>
+              <td>{{ orden.orden_docum }}</td>  
+            </tr>
+            {% endfor %}
+          </table>
+
+          <!-- <div class="pagination">
+            <span class="step-links">
+                {% if equipos.has_previous %} 
+                    <a href="?page=1">&laquo; Primero</a>
+                    <a href="?page={{ equipos.previous_page_number }}">&lsaquo; Anterior</a>
+                {% endif %}
+          
+                <span class="current-page">
+                    Página {{ equipos.number }} de {{ equipos.paginator.num_pages }}
+                </span>
+          
+                {% if equipos.has_next %}
+                    <a href="?page={{ equipos.next_page_number }}">Siguiente &rsaquo;</a>
+                    <a href="?page={{ equipos.paginator.num_pages }}">Último &raquo;</a>
+                {% endif %}
+            </span>
+          </div> -->
+    </div>
+</div>
+
+
+
+{% endblock %}

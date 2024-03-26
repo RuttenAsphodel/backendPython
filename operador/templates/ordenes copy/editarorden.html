@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block titulo %} Ordenes de Trabajo {% endblock %}
+
+{% block contenido %}
+
+<div class="card">
+    <div class="card-header">
+        Actualizar Orden de Trabajo
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Modificar datos de Orden</h4>
+        {% include 'ordenes/formorden.html' %}
+    </div>
+</div>
+
+{% endblock %}

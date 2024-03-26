@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block titulo %} Agregar Ordenes {% endblock %}
+{% block contenido %}
+
+    <h1>Agregar Orden</h1>
+
+    <div class="container">
+      <form class="form" method="POST">
+        <div class="mb-3 col-2">
+          <div>
+            {% csrf_token %} 
+            {{ formularioOrden.as_p }}
+          </div>
+        </div>
+       
+        <div class="mb-3 row">
+          <div class="offset-sm-4 col-sm-8">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a class="btn btn-danger" href="{% url 'ordenes' %}" role="button">Cancelar</a>
+          </div>
+        </div>
+      </form>
+    </div>
+
+
+  {% endblock %}
